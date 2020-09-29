@@ -12,3 +12,5 @@ To run:
 2. cd into the directory
 3. Install dependencies `$ npm install`
 4. Run the application `$ npm start`
+
+[Live Link](https://clothingtrials.netlify.app/)
