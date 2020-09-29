@@ -42,7 +42,8 @@ class Dresses extends Component {
 
 const mapStateToProps = (state)=>{
     return {
-        items: state.items
+        items: state.items,
+        additions: state.addedItems
     }
 }
 const mapDispatchToProps= (dispatch)=>{

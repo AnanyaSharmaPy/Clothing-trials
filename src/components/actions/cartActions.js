@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_ITEM, SELECT_ITEM, SELECT_SIZE } from './action-types/cart-actions'
+import { ADD_TO_CART, REMOVE_ITEM, SELECT_ITEM, SELECT_SIZE, REMOVE_SELECT } from './action-types/cart-actions'
 
 export const addToCart= (id)=>{
     return{
@@ -22,5 +22,11 @@ export const selectSize=(size)=>{
     return {
         type: SELECT_SIZE,
         size
+    }
+}
+export const removeSelect=(id)=>{
+    return {
+        type: REMOVE_SELECT,
+        id
     }
 }

@@ -9,7 +9,7 @@ import Item8 from '../../images/bottom2.webp'
 import Item9 from '../../images/bottom3.jpg'
 import Item10 from '../../images/bottom4.png'
 import Item11 from '../../images/bottom5.webp'
-import { ADD_TO_CART,REMOVE_ITEM, SELECT_ITEM, SELECT_SIZE } from '../actions/action-types/cart-actions'
+import { ADD_TO_CART, REMOVE_ITEM, REMOVE_SELECT, SELECT_ITEM, SELECT_SIZE } from '../actions/action-types/cart-actions'
 
 const initState = {
     items: [
@@ -86,6 +86,17 @@ const cartReducer= (state = initState, action)=>{
                     selectedItems: [...state.selectedItems, new_items]
                 }
             }
+        }
+    }
+
+    if(action.type === REMOVE_SELECT) {
+        let itemToRemove= state.addedItems.find(item=> action.id === item.id)
+        let new_sel_items = state.selectedItems.filter(item=> action.id !== item.id)
+        
+        console.log(itemToRemove)
+        return{
+            ...state,
+            selectedItems: new_sel_items
         }
     }
 
